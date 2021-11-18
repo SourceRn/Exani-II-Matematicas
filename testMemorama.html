@@ -11,6 +11,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <!--Css para Correcion del menu-->
+  <link rel="stylesheet" href="src/css/responsive.css">
   <title>Memorama</title>
 </head>
 
@@ -21,7 +23,7 @@
 
 
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html"><img src="src/images/index/MiLogo.png" width="100px"><b> EXANI II
+      <a class="navbar-brand" href="index.html"><img src="src/images/index/MiLogo.png" width="100px" id="imgNavBar"><b id="titNavbar"> EXANI II
           MATEMÁTICAS</b> </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -114,9 +116,9 @@
 
       <!-- botones-->
 
-      <a href="index.html" class="btn btn-primary btn-lg"><b>Repasar los temas</b></a>
+      <a href="index.html" class="btn btn-primary btn-lg btns"><b>Repasar los temas</b></a>
       <!-- float-right se utiliza para que se posicione el boton a la derecha -->
-      <a href="reto.html" class="btn btn-primary btn-lg  float-right"><b> Reto de aprendizajes </b></a>
+      <a href="reto.html" class="btn btn-primary btn-lg  float-right btns"><b> Reto de aprendizajes </b></a>
       <!-- btn-outline-dark es el contorno del boton-->
       <!--style="background-color: black;" cambia el color del boton -->
     </div>
@@ -126,7 +128,7 @@
   <!-- menu inferior -->
   <hr SIZE="8px">
 
-  <nav aria-label="Page navigation example">
+  <nav aria-label="Page navigation example" id="bottomNav">
     <ul class="pagination justify-content-center">
       <li class="page-item">
         <a class="page-link" href="index.html">Inicio</a>

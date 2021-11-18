@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="src/css/cssIndex.css">
     <link rel="shortcut icon" href="src/images/index/MiLogo.png" type="image/x-icon">
     <link rel="stylesheet" href="src/css/cssReto.css">
+    <!--Css para Correcion del menu-->
+  <link rel="stylesheet" href="src/css/responsive.css">
 </head>
 <header>
         <!-- cambiar el color de la barra de menu-->
@@ -17,7 +19,7 @@
        
   
     <div class="container-fluid">
-      <a  class="navbar-brand" href="index.html"><img src="src/images/index/MiLogo.png" width="100px"><b> EXANI II MATEMÁTICAS</b> </a>
+      <a  class="navbar-brand" href="index.html"><img src="src/images/index/MiLogo.png" width="100px" id="imgNavBar"><b id="titNavbar"> EXANI II MATEMÁTICAS</b> </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -335,9 +337,9 @@
                         <div id="Temas" class="col-md-12 card-body d-flex justify-content-between align-items-center">
                    
                           <!-- botones-->
-                          <a href="problemascon.html" class="btn btn-primary btn-lg " text-align="center"; tabindex="-1" role="button" aria-disabled="true" hidden id="repasar"><center><b>Repasar el Tema</center></b></a>
+                          <a href="problemascon.html" class="btn btn-primary btn-lg btns" text-align="center"; tabindex="-1" role="button" aria-disabled="true" hidden id="repasar"><center><b>Repasar el Tema</center></b></a>
                 
-                          <a href="actividad2.html" class="btn btn-primary btn-lg "  tabindex="-1" role="button" aria-disabled="true" hidden id="reiniciar"><b>Reiniciar la Actividad</b></a>
+                          <a href="actividad2.html" class="btn btn-primary btn-lg btns"  tabindex="-1" role="button" aria-disabled="true" hidden id="reiniciar"><b>Reiniciar la Actividad</b></a>
                                      <!-- btn-outline-dark es el contorno del boton--> <!--style="background-color: black;" cambia el color del boton -->
                           </div>
                           <hr SIZE="8px"  ><!-- salto de parrafo--><!-- se puede cambiar color y tamaño-->
@@ -350,9 +352,9 @@
                    
                     <!-- botones-->
 
-                        <a href="problemascon.html" class="btn btn-primary btn-lg"><b>Anterior</b></a>
+                        <a href="problemascon.html" class="btn btn-primary btn-lg btns"><b>Anterior</b></a>
                                                                                 <!-- float-right se utiliza para que se posicione el boton a la derecha -->
-                        <a href="expresiones.html" class="btn btn-primary btn-lg  float-right" ><b>Siguiente tema </b></a>
+                        <a href="expresiones.html" class="btn btn-primary btn-lg  float-right btns" ><b>Siguiente tema </b></a>
                                                 <!-- btn-outline-dark es el contorno del boton--> <!--style="background-color: black;" cambia el color del boton -->
                     </div>
         </div>
@@ -362,7 +364,7 @@
         
         <b>
           <hr SIZE="8px">
-          <nav aria-label="Page navigation example">
+          <nav aria-label="Page navigation example" id="bottomNav">
             <ul class="pagination justify-content-center">
               <li class="page-item">
                 <a class="page-link" href="index.html">Inicio</a>

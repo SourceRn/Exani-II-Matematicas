@@ -3,7 +3,7 @@
 }
 
 /*Navegacion Inferior*/
-@media screen and (max-width: 731px) {
+@media screen and (max-width: 771px) {
     #bottomNav{
         font-size: 12px;
     }
