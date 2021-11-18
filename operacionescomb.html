@@ -9,6 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="src/css/cssIndex.css">
     <link rel="shortcut icon" href="src/images/index/MiLogo.png" type="image/x-icon">
+    <!--Css para Correcion del menu-->
+  <link rel="stylesheet" href="src/css/responsive.css">
 </head>
 <header>
         <!-- cambiar el color de la barra de menu-->
@@ -16,7 +18,7 @@
        
   
     <div class="container-fluid">
-      <a  class="navbar-brand" href="index.html"><img src="src/images/index/MiLogo.png" width="100px"><b> EXANI II MATEMÁTICAS</b> </a>
+      <a  class="navbar-brand" href="index.html"><img src="src/images/index/MiLogo.png" width="100px" id="imgNavBar"><b id="titNavbar"> EXANI II MATEMÁTICAS</b> </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -160,16 +162,16 @@
                    
                     <!-- botones-->
 
-                        <a href="arrastar.html" class="btn btn-primary btn-lg"  ><b>Anterior</b></a>
+                        <a href="arrastar.html" class="btn btn-primary btn-lg btns"  ><b>Anterior</b></a>
                                                                                 <!-- float-right se utiliza para que se posicione el boton a la derecha -->
-                        <a href="actividad1.html" class="btn btn-primary btn-lg   float-right"><b>Seguir con la actividad</b></a>
+                        <a href="actividad1.html" class="btn btn-primary btn-lg   float-right btns"><b>Seguir con la actividad</b></a>
 
                                                 <!-- notas extras xd: btn-outline-dark es el contorno del boton--> <!--style="background-color: black;" cambia el color del boton -->
                     </div>
         </div>
         <b>
         <hr SIZE="8px" ><!--salto de linea-->
-        <nav aria-label="Page navigation example">
+        <nav aria-label="Page navigation example" id="bottomNav">
           <ul class="pagination justify-content-center">
             <li class="page-item">
               <a class="page-link" href="index.html">Inicio</a>

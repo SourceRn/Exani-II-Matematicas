@@ -1,6 +1,14 @@
 let iconos;
 let selecciones = [];
 let contador = 0;
+let numCartas = 12;
+let colors = [
+    "#272727",
+    "#FED766",
+    "#009FB7",
+    "#696773",
+    "#EFF1F3"
+];
 function cargarIconos() {
     iconos = [
         '<i class="fas fa-traffic-light"></i>',
@@ -26,7 +34,7 @@ function generarTablero() {
     cargarIconos();
     let tablero = document.getElementById("tablero");
     let tarjetas = [];
-    for (let i = 0; i < 24; i++) {
+    for (let i = 0; i < numCartas; i++) {
         tarjetas.push(`
             <div class="area-tarjeta" onclick = "seleccionarTarjeta(${i})">
                 <div class="tarjeta" id="tarjeta${i}">
@@ -68,6 +76,8 @@ function seleccionarTarjeta(i) {
     }
 }
 
+// style="background-color:${}"
+
 function deseleccionar(selecciones) {
     setTimeout(() => {
         let tr1 = document.getElementById("trasera" + selecciones[0]);
@@ -78,17 +88,20 @@ function deseleccionar(selecciones) {
             t1.style.transform = "rotateY(0deg)";
             t2.style.transform = "rotateY(0deg)";
         } else {
+            changeColor = true;
             tr1.style.background = "plum";
             tr2.style.background = "plum";
             contador++;
             //validacion
-            if (contador == 12) {
+            if (contador == (numCartas / 2)) {
                 let resultado = document.getElementById("result");
+                let infoDiv = document.getElementById("info");
+                infoDiv.removeAttribute("hidden");
                 resultado.innerHTML = `
-                    <br><br><br>
-                    <div id="resultado"><h3>GANASTE!!</h3></div>
-                    <br><br><br>
-                `;
+                        <br><br><br>
+                        <div id="resultado"><h3>GANASTE!!</h3></div>
+                        <br><br><br>
+                    `;
                 let btn = document.getElementById("btnNewGame");
                 btn.removeAttribute("hidden");
                 btn.innerHTML = "Nuevo Juego"

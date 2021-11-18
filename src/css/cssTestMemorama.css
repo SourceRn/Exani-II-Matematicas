@@ -80,13 +80,22 @@
     }
 }
 
+/*Info*/
+
+#info{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+/*Resultado*/
+
 #resultado{
     display: flex;
     width: 50%;
-    background-color: aquamarine;
     margin: auto;
-    border-radius: 20px;
-    border: white 6px solid;
 }
 #resultado h3{
     margin: auto;
@@ -94,4 +103,6 @@
 
 #btnNewGame{
     font-style: none;
+    display: flex;
+    width: 50%;
 }
