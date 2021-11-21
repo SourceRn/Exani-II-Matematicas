@@ -1,6 +1,7 @@
 let iconos;
 let selecciones = [];
 let contador = 0;
+let puntuacion = 0;
 let numCartas = 12;
 let colors = [
     "#272727",
@@ -31,6 +32,7 @@ generarTablero();
 function generarTablero() {
     //contador = 0;
     //selecciones = [];
+    document.getElementById("puntuacion").innerHTML = "<h3><b>Puntuacion: "+puntuacion+"</b></h3>";
     cargarIconos();
     let tablero = document.getElementById("tablero");
     let tarjetas = [];
@@ -92,6 +94,8 @@ function deseleccionar(selecciones) {
             tr1.style.background = "plum";
             tr2.style.background = "plum";
             contador++;
+            puntuacion++;
+            document.getElementById("puntuacion").innerHTML = "<h3><b>Puntuacion: "+puntuacion+"</b></h3>";
             //validacion
             if (contador == (numCartas / 2)) {
                 let resultado = document.getElementById("result");
@@ -99,13 +103,14 @@ function deseleccionar(selecciones) {
                 infoDiv.removeAttribute("hidden");
                 resultado.innerHTML = `
                         <br><br><br>
-                        <div id="resultado"><h3>GANASTE!!</h3></div>
+                        <div id="resultado"><h3><b>GANASTE!!</b> <br> Con una puntuacion de: <b>6</b> !!!</h3></div>
                         <br><br><br>
                     `;
                 let btn = document.getElementById("btnNewGame");
                 btn.removeAttribute("hidden");
                 btn.innerHTML = "Nuevo Juego"
                 document.getElementById("saltosdeLinea").innerHTML = "<br><br><br>";
+                document.getElementById("puntuacion").innerHTML = "";
             }
         }
     }, 1000);

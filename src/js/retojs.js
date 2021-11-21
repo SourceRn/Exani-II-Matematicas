@@ -112,13 +112,66 @@ pregunta20 = new Preguntas(
     ['a. -25', 'b. 25', 'c. 7', 'd. -7'], //respuestas
     'd' //resp_correcta
 );
+pregunta21 = new Preguntas(
+    'Coloca el termino que corresponda a un monomio', //text
+    ['a. 6sxyz - 10', 'b. 2a^3b^2 + 50x^3y', 'c. 7a^3b^2', 'd. 7a - 10b + 6b - 2a + 9a'], //respuestas
+    'c' //resp_correcta
+);
+pregunta22 = new Preguntas(
+    'Todos son binomios excepto:', //text
+    ['a. 8a - 5b^2', 'b. 6b^2b^3', 'c. -6a^2b^3', 'd. 5x^2 - y'], //respuestas
+    'c' //resp_correcta
+);
+pregunta23 = new Preguntas(
+    'Selecciona la clasificación del siguiente termino 7a -10b + 6e', //text
+    ['a. Monomio', 'b. Polinomio', 'c. Binomio', 'd. Trinomio'], //respuestas
+    'd' //resp_correcta
+);
+pregunta24 = new Preguntas(
+    'Coloca el termino que corresponda a un trinomio', //text
+    ['a. 4ab^2 + 2b - 5c^4 - y^3', 'b. 50x^3y + 2x^5 + 8z', 'c. 2a^3b2 + 50x^3y', 'd. -5a2b'], //respuestas
+    'b' //resp_correcta
+);
+pregunta25 = new Preguntas(
+    'Determina la variable de mayor exponente en el siguiente polinomio 7x4 + 6y³ + 4a² + 15xb+ 5', //text
+    ['a. y', 'b. x', 'c. a', 'd. b'], //respuestas
+    'b' //resp_correcta
+);
+pregunta26 = new Preguntas(
+    'Es una combinacion de letras y números ligadas por los signos de las operaciones.', //text
+    ['a. Expresión Decimal', 'b. Expresion Algebraica', 'c. Expresion polinomica', 'd. otro'], //respuestas
+    'b' //resp_correcta
+);
+pregunta27 = new Preguntas(
+    '¿Por qué está conformada la expresión algebraica?', //text
+    ['a. Términos', 'b. Base', 'c. Sumas', 'd. Numeros'], //respuestas
+    'a' //resp_correcta
+);
+pregunta28 = new Preguntas(
+    'Es el mayor de los grados de los términos que contiene el polinomio. Los polinomios se ordenan teniendo en cuenta los exponentes de las variables.', //text
+    ['a. Grado Relativo', 'b. Grado Absoluto', 'c. Binomio y Trinomio', 'd. Expresión Algebraica'], //respuestas
+    'b' //resp_correcta
+);
+pregunta29 = new Preguntas(
+    'Es el mayor exponente que tiene la variable en el polinomio.', //text
+    ['a. Grado Relativo', 'b. Grado Absoulto', 'c. Binomio Trinomio', 'd. Expresión Algebraica'], //respuestas
+    'a' //resp_correcta
+);
+pregunta30 = new Preguntas(
+    'De acuerdo a la cantidad de sumandos el polinomio recibe denominaciones particulares como:', //text
+    ['a. Grado Relativo', 'b. Grado Absoluto', 'c. Binomio y Trinomio', 'd. Expresión Algebraica'], //respuestas
+    'c' //resp_correcta
+);
+
 
 //Array que almacena las preguntas
 arrayPreguntas = [
     pregunta1, pregunta2, pregunta3, pregunta4, pregunta5,
     pregunta6, pregunta7, pregunta8, pregunta9, pregunta10,
     pregunta11, pregunta12, pregunta13, pregunta14, pregunta15,
-    pregunta16, pregunta17, pregunta18, pregunta19, pregunta20
+    pregunta16, pregunta17, pregunta18, pregunta19, pregunta20,
+    pregunta21, pregunta22, pregunta23, pregunta24, pregunta25,
+    pregunta26, pregunta27, pregunta28, pregunta29, pregunta30
 ];
 
 

@@ -33,11 +33,18 @@ H1{
 
 /* fuentes---------------------------------------------------------------------------------*/
 
+/*PARA CAMBIAR EL FONT, DESCARGAR Y AGREGAR EL NUEVO FONT A 
+src/fonts Y LUEGO MODIFICAR EL NOMBRE "FUTRFW.TTF" POR EL DE LA NUEVA 
+FONT ---------- POR AHORA SE DESABILITARA ESTA OPCION DEL FONT ------
+--------------- CUESTIONES DE FRONT - END ---------------------------*/
+
+/*
 @font-face{
     font-family: 'FUTRFW';
-       src:url('src/fonts/FUTRFW.TTF');
+       src:url('/src/fonts/FUTRFW.TTF');
        
    }
+   */
   
 #menu{
     font-family: 'FUTRFW', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -53,3 +60,7 @@ H1{
     margin:auto;
 }
 */
+
+.temsSeparation:hover{
+    background-color: black;
+}

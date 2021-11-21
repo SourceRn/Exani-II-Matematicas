@@ -1,6 +1,14 @@
 #imgNavBar{
     width: 100px;
 }
+.separation {
+    background-color: black;
+    color: white;
+}
+.separation:hover{
+    background-color: black;
+    color: white;
+}
 
 /*Navegacion Inferior*/
 @media screen and (max-width: 771px) {
