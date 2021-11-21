@@ -7,7 +7,8 @@ class Preguntas {
     }
 }
 
-//Preguntas
+//----------------PREGUNTAS Y VARIABLES--------------------//
+
 pregunta1 = new Preguntas(
     '3 {1 + 2 [ 4 + 5 (6 - 7) + 8] - 9} =', ['a. -18', 'b. 18', 'c. 16', 'd. 13'],
     'b'
@@ -28,26 +29,18 @@ pregunta5 = new Preguntas(
     '(30 – 20) / 2 + (6*5) / 3 + (40 – 25) + (9-6) =', ['a. 20', 'b. 33', 'c. 30', 'd. 21'],
     'b'
 );
-//imgPregunt6 = document.createElement("img");
-//imgPregunt6.src = "src/images/reto/ejercicios/eje6.PNG";
 pregunta6 = new Preguntas(
     '-5{[(-3*2)/3]+1}+2-[-7(7-2)+1] =', ['a. 13', 'b. 10', 'c. -9', 'd. 9'],
     'c'
 );
-//imgPregunt7 = document.createElement("img");
-//imgPregunt7.src = "src/images/reto/ejercicios/eje7.jpeg";
 pregunta7 = new Preguntas(
     '1/2(3/4 + 1/8) =', ['a. 7/14', 'b. 5/16', 'c. 6/14', 'd. 7/16'],
     'd'
 );
-//imgPregunt8 = document.createElement("img");
-//imgPregunt8.src = "src/images/reto/ejercicios/eje8.jpeg";
 pregunta8 = new Preguntas(
     '(3/2 + 1/4) / (5/6 - 1/3) =', ['a. 2/7', 'b. 3.5', 'c. -1.8', 'd. -7/2'],
     'b'
 );
-//imgPregunt9 = document.createElement("img");
-//imgPregunt9.src = "src/images/reto/ejercicios/eje9.jpeg";
 pregunta9 = new Preguntas(
     '(-1 + 3/4 - 1/3) / (2 - 1/4) =', ['a. -1/3', 'b. 1/3', 'c. -0.66', 'd. 0.66'],
     'a'
@@ -163,48 +156,39 @@ pregunta30 = new Preguntas(
     'c' //resp_correcta
 );
 
-
-//Array que almacena las preguntas
+numTotalPreguntas = 10; //cantidad de preguntas que apareceran en el reto
 arrayPreguntas = [
     pregunta1, pregunta2, pregunta3, pregunta4, pregunta5,
     pregunta6, pregunta7, pregunta8, pregunta9, pregunta10,
     pregunta11, pregunta12, pregunta13, pregunta14, pregunta15,
-    pregunta16, pregunta17, pregunta18, pregunta19, pregunta20,
+    pregunta16, pregunta17, pregunta18, pregunta19, pregunta20,     //Array que almacena las preguntas
     pregunta21, pregunta22, pregunta23, pregunta24, pregunta25,
     pregunta26, pregunta27, pregunta28, pregunta29, pregunta30
-];
+]; 
+indiceAzar = [];
+preguntasAzar = []; //Array para almacenar las preguntas elegidas al azar
 
+
+//-------------------PROCEDIMIENTOS Y FUNCIONES--------------------------//
 
 //Funcion que desordena un array y retorna uno nuevo
 function indicesAzar(array) {
-    //Array que almacenara los indices de las preguntas
-    indice = [];
-
-    //Se llena el array 'indice'
+    indice = []; //Array que almacenara los indices de las preguntas
+    
     for (let i = 0; i < array.length; i++) {
-        indice[i] = i;
+        indice[i] = i;                          //Se llena el array 'indice'
     }
 
-    //Se colocan aleatoriamente los valores de indice
-    indice.sort(() => Math.random() > 0.5 ? 1 : -1)
+    indice.sort(() => Math.random() > 0.5 ? 1 : -1); //Se colocan aleatoriamente los valores de indice
 
     return indice;
 }
 
-indiceAzar = [];
-//Se eligen los primeros 5 valores de indice y se almacenan en el array indiceAzar
-//indiceAzar = indicesAzar(arrayPreguntas).slice(0, 5);
+indiceAzar = indicesAzar(arrayPreguntas).slice(0, 10); //Se eligen los primeros 10 valores de indice y se almacenan en el array indiceAzar
 
-//Se eligen los primeros 10 valores de indice y se almacenan en el array indiceAzar
-indiceAzar = indicesAzar(arrayPreguntas).slice(0, 10);
 
-//Array para almacenar las preguntas elegidas al azar
-preguntasAzar = [];
-//for (let i = 0; i < (arrayPreguntas.length/2); i++) {
-//    preguntasAzar[i] = arrayPreguntas[indiceAzar[i]];
-//}
-for (let i = 0; i < (arrayPreguntas.length - 10); i++) {
-    preguntasAzar[i] = arrayPreguntas[indiceAzar[i]];
+for (let i = 0; i < numTotalPreguntas; i++) {
+    preguntasAzar[i] = arrayPreguntas[indiceAzar[i]];      //se almacenan las preguntas al azar
 }
 
 function verificarRespuestas() {
@@ -212,13 +196,10 @@ function verificarRespuestas() {
     puntuacion = 0;
 
     formularioReto = document.forms.form;
-    //console.log(formularioReto.eje1.value);
 
-    //array para almacenar respuestas correctas
-    respuestas = [];
-    //buclque almacena las respuestas correctas de las preguntas al azar
+    respuestas = [];    //array para almacenar respuestas correctas
     for (let index = 0; index < preguntasAzar.length; index++) {
-        respuestas[index] = preguntasAzar[index].resp_correcta;
+        respuestas[index] = preguntasAzar[index].resp_correcta;     //buclque almacena las respuestas correctas de las preguntas al azar
     }
 
 
@@ -309,13 +290,3 @@ function escribirHTML() {
 }
 
 escribirHTML();
-
-//for (let index = 0; index < (arrayPreguntas.length/2); index++) {
-//    console.log(preguntasAzar[index].text);
-//}
-//console.log(indice);
-//console.log(indiceAzar);
-//console.log(arrayPreguntas[0])
-//document.getElementById('pregunta1').innerHTML = pregunta1.pregunta;
-//console.log(document.getElementById('A1'));
-//document.getElementById('respPreg1').innerHTML = pregunta1.respuestas[0];
