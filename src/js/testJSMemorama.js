@@ -13,12 +13,12 @@ let colors = [
 
 function cargarIconos() {
     iconos = [
-        '<img src="src/images/img-mem/par1.1.png" alt="par1" width="245px">', //<i class="fas fa-traffic-light"></i>
-        '<img src="src/images/img-mem/par2.1.png" alt="par1" width="245px">', //<i class="fas fa-disease"></i>
-        '<img src="src/images/img-mem/par7.1.png" alt="par1" width="245px">', //<i class="fas fa-cube"></i>
-        '<img src="src/images/img-mem/par4.1.png" alt="par1" width="245px">', //<i class="fas fa-dice-d20"></i>
-        '<img src="src/images/img-mem/par5.1.png" alt="par1" width="245px">', //<i class="fas fa-cubes"></i>
-        '<img src="src/images/img-mem/par6.1.png" alt="par1" width="245px">', //<i class="fas fa-dice-four"></i>
+        '<img src="src/images/img-mem/par1.1.png" width="95%" id="icono1">', //<i class="fas fa-traffic-light"></i>
+        '<img src="src/images/img-mem/par2.1.png" width="95%" id="icono2">', //<i class="fas fa-disease"></i>
+        '<img src="src/images/img-mem/par7.1.png" width="95%" id="icono3">', //<i class="fas fa-cube"></i>
+        '<img src="src/images/img-mem/par4.1.png" width="95%" id="icono4">', //<i class="fas fa-dice-d20"></i>
+        '<img src="src/images/img-mem/par5.1.png" width="95%" id="icono5">', //<i class="fas fa-cubes"></i>
+        '<img src="src/images/img-mem/par6.1.png" width="95%" id="icono6">', //<i class="fas fa-dice-four"></i>
         '<i class="fas fa-dice-two"></i>',
         '<i class="fas fa-dice-five"></i>',
         '<i class="fas fa-dice-one"></i>',
@@ -44,7 +44,7 @@ function generarTablero() {
                     <div class="cara trasera" id = "trasera${i}">
                         ${iconos[0]}
                     </div>
-                    <div class="cara superior" style="background-image: url(src/images/img-mem/1.png); background-size: cover; background-repeat: no-repeat;" width = "100px">
+                    <div class="cara superior" style="background-image: url(src/images/img-mem/1.png); background-size: cover; background-repeat: no-repeat; width: 100%;">
                     </div>
                 </div>
             </div>
