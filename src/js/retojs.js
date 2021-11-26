@@ -155,7 +155,6 @@ pregunta30 = new Preguntas(
     ['a. Grado Relativo', 'b. Grado Absoluto', 'c. Binomio y Trinomio', 'd. Expresión Algebraica'], //respuestas
     'c' //resp_correcta
 );
-
 numTotalPreguntas = 10; //cantidad de preguntas que apareceran en el reto
 arrayPreguntas = [
     pregunta1, pregunta2, pregunta3, pregunta4, pregunta5,

@@ -1,6 +1,6 @@
 :root{
     --w: calc(70vw / 6);
-    --h: calc(75vh / 4);
+    --h: calc(85vh / 4);
 }
 
 *{
