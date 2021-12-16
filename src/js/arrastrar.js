@@ -53,16 +53,29 @@ function writeHTML() {
         cajas[i].innerHTML = `<img src="${imgsNumbers[i]}" alt="imagen${i}" width="10%">`;
     }
 
+    document.getElementById("verificar").setAttribute("hidden", "");
+
     //console.log(multDiv.getAttribute("src"));
 }
 
 function validacion(){
+
     for (let i = 0; i < ids.length; i++) {
         if (ids[i] == ordenCorrecto[i]) {
             puntaje++;
         }
     }
-    console.log(puntaje);
+    document.getElementById("verificar").removeAttribute("hidden");
+    document.getElementById("reiniciar").removeAttribute("hidden");
+    document.getElementById("volver").removeAttribute("hidden");
+    document.getElementById("siguiente").removeAttribute("hidden");
+    document.getElementById("btnDeshacer").setAttribute("hidden", "");
+    multDiv.removeAttribute("onclick");
+    parentesis.removeAttribute("onclick");
+    potencias.removeAttribute("onclick");
+    sumResta.removeAttribute("onclick");
+
+    document.getElementById("resultado").innerHTML = '<h3>Obtuviste <span>' + puntaje + '</span> de <span>' + puntosTotales + '</span> puntos <h/3>';
 }
 
 writeHTML();
