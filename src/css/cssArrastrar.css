@@ -1,0 +1,8 @@
+.imgJerarquia{
+    margin-left: 10%;
+    cursor: pointer;
+}
+.cajaImg{
+    display: flex;
+    border: black 1% solid;
+}
