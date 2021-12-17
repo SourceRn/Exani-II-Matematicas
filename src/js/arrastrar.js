@@ -1,155 +1,81 @@
-        //funcion para eliminar items de un array
-        //function delteItem(arr, item){
-        //    return arr.filter(function(e){
-        //        return e !== item;
-        //    })
-        //}
-        
-        ordenCorrecto = ['producto1', 'producto4', 'producto3', 'producto2'];
-        btns = ['repasar','reiniciar','volver','siguiente', 'verificar'];
-        ids = [];
-        puntuacionTotal = 4;
-        puntos = 0;
-        var vcaja2 = document.getElementById("caja2");
-        var vcaja1 = document.getElementById("caja1");
-        var vcaja3 = document.getElementById("caja3");
-        var vcaja4 = document.getElementById("caja4");
-        var vcaja5 = document.getElementById("caja5");
-        cajas = [vcaja1, vcaja2, vcaja3, vcaja4, vcaja5];
-        var productos = document.getElementsByClassName("producto");//array
+let imgsNumbers = ["src/images/index/1.png", "src/images/index/2.png", "src/images/index/3.png", "src/images/index/4.png"];
+let numCajas = 4;
+let cajas = [];
+let multDiv = document.getElementById("multDiv");
+let parentesis = document.getElementById("parentesis");
+let potencias = document.getElementById("potencias");
+let sumResta = document.getElementById("sumResta");
+let operators = [multDiv, parentesis, potencias, sumResta];
+let cont = 0;
+let helper = 0;
+let ids = ["", "", "", ""];
+let ordenCorrecto = ["parentesis", "potencias", "multDiv", "sumResta"];
+let puntosTotales = 4;
+let puntaje = 0;
 
-        vcaja1.addEventListener("dragover", (ev) => permitirSoltar(ev));
-        vcaja1.addEventListener("drop", (ev) => soltar1(ev));
+function deshacer(){
+    multDiv.removeAttribute("hidden");
+    parentesis.removeAttribute("hidden");
+    potencias.removeAttribute("hidden");
+    sumResta.removeAttribute("hidden");
+    cont = 0;
+    puntaje = 0;
+    writeHTML();
+}
 
-        vcaja2.addEventListener("dragover", (ev) => permitirSoltar(ev));
-        vcaja2.addEventListener("drop", (ev) => soltar2(ev));
+function putImages(id){
+    id.setAttribute("hidden", "");
+    cont += 1;
     
-        vcaja3.addEventListener("dragover", (ev) => permitirSoltar(ev));
-        vcaja3.addEventListener("drop", (ev) => soltar3(ev));
-            
-        vcaja4.addEventListener("dragover", (ev) => permitirSoltar(ev));
-        vcaja4.addEventListener("drop", (ev) => soltar4(ev));
-            
-        vcaja5.addEventListener("dragover", (ev) => permitirSoltar(ev));
-        vcaja5.addEventListener("drop", (ev) => soltar5(ev));
+    if (id.getAttribute("id", "") == "multDiv"){
+        helper = 0;
+    } else if(id.getAttribute("id", "") == "parentesis"){
+        helper = 1;
+    } else if (id.getAttribute("id", "") == "potencias"){
+        helper = 2;
+    } else if (id.getAttribute("id", "") == "sumResta"){
+        helper = 3;
+    }
 
-        for(var i=0; i<productos.length; i++){
-            productos[i].setAttribute("draggable", "true")
-            productos[i].setAttribute("id", "producto"+(i+1))                 //Bucle que escribe en el html
-            productos[i].addEventListener("dragstart",(ev) => iniciarArrastre(ev))
+    cajas[cont-1].innerHTML = `<img src="${imgsNumbers[cont-1]}" alt="imagen${cont-1}" width="10%">
+        <img src="${operators[helper].getAttribute("src", "")}" alt="operators">
+    `;
+
+    ids[cont-1] = id.getAttribute("id", "");
+}
+
+function writeHTML() {
+    for (let i = 1; i <= numCajas; i++) {
+        cajas[i - 1] = document.getElementById("cajaImg" + i);
+    }
+
+    for (let i = 0; i < cajas.length; i++) {
+        cajas[i].innerHTML = `<img src="${imgsNumbers[i]}" alt="imagen${i}" width="10%">`;
+    }
+
+    document.getElementById("verificar").setAttribute("hidden", "");
+
+    //console.log(multDiv.getAttribute("src"));
+}
+
+function validacion(){
+
+    for (let i = 0; i < ids.length; i++) {
+        if (ids[i] == ordenCorrecto[i]) {
+            puntaje++;
         }
-        
-    
-        function iniciarArrastre(ev){
-            ev.dataTransfer.setData("idproducto",ev.target.id);
-            console.log(ev.target.id) //muestra el id por consola id: ev.target.id
-        }
+    }
+    document.getElementById("verificar").removeAttribute("hidden");
+    document.getElementById("reiniciar").removeAttribute("hidden");
+    document.getElementById("volver").removeAttribute("hidden");
+    document.getElementById("siguiente").removeAttribute("hidden");
+    document.getElementById("btnDeshacer").setAttribute("hidden", "");
+    multDiv.removeAttribute("onclick");
+    parentesis.removeAttribute("onclick");
+    potencias.removeAttribute("onclick");
+    sumResta.removeAttribute("onclick");
 
-        function permitirSoltar(ev){
-            ev.preventDefault();
-        }
+    document.getElementById("resultado").innerHTML = '<h3>Obtuviste <span>' + puntaje + '</span> de <span>' + puntosTotales + '</span> puntos <h/3>';
+}
 
-        function evitarRepeticionDeImagenes(numImagenes, caja, idProducto){
-            if (numImagenes <= 1) {
-                caja.appendChild(document.getElementById(idProducto));
-            }
-        }
-
-        function soltar1(ev){
-            ev.preventDefault();
-            var data1 = ev.dataTransfer.getData("idproducto");
-            vcaja1.appendChild(document.getElementById(data1));
-        }
-
-        function soltar2(ev){
-            ev.preventDefault();
-            var data2 = ev.dataTransfer.getData("idproducto");
-            //vcaja2.appendChild(document.getElementById(data));
-            //console.log(vcaja2.childElementCount);
-            //console.log(ev.target.id); //devuelve la caja actual
-            //console.log(data); //devuelve el id de producto
-            evitarRepeticionDeImagenes(vcaja2.childElementCount, vcaja2, data2);
-            ids[0] = data2;
-        }
-        function soltar3(ev){
-            ev.preventDefault();
-            var data3 = ev.dataTransfer.getData("idproducto");
-            //vcaja3.appendChild(document.getElementById(data));
-            //console.log(vcaja3.childElementCount);
-            evitarRepeticionDeImagenes(vcaja3.childElementCount, vcaja3, data3);
-            ids[1] = data3;
-        }
-        
-        function soltar4(ev){
-            ev.preventDefault();
-            var data4 = ev.dataTransfer.getData("idproducto");
-            //vcaja4.appendChild(document.getElementById(data));
-            //console.log(vcaja4.childElementCount);
-            evitarRepeticionDeImagenes(vcaja4.childElementCount, vcaja4, data4);
-            ids[2] = data4;
-        }
-        function soltar5(ev){
-            ev.preventDefault();
-            var data5 = ev.dataTransfer.getData("idproducto");
-            //vcaja5.appendChild(document.getElementById(data));
-            //console.log(vcaja5.childElementCount);
-            evitarRepeticionDeImagenes(vcaja5.childElementCount, vcaja5, data5);
-            ids[3] = data5;
-        }
-
-        //function newArray(array){
-        //    for (let i = 0; i < array.length; i++) {
-        //        if ( array[i] === null || array[i] === "" ) {
-        //            newArray = delteItem(array, array[i]);
-        //        }               
-        //    }
-        //
-        //    return newArray;
-        //}
-        //resultado.innerHTML = '<h3>Coloca en su lugar todas las imagenes porfavor: <span> Faltan '+(puntuacion-ids.length)+' imagenes</span>';
-        //console.log(newArray(arrayPrueba));
-        //console.log(arrayPrueba);
-
-        //ifAnswered(answered);
-
-        function validacion(){
-            for (let i = 0; i < ids.length; i++) {
-                if (ids[i] === ordenCorrecto[i]) {
-                    puntos++;
-                }
-            }
-            for (let i = 0; i < btns.length; i++) {
-                document.getElementById(btns[i]).removeAttribute('hidden');
-            }
-            resultado.innerHTML = '<h3>Obtuviste <span>' + puntos + '</span> de <span>' + puntuacionTotal + '</span> puntos <h/3>';
-            
-
-            //deshabilitar arrastre
-
-            var vcaja2 = document.getElementById("caja2");
-            var vcaja1 = document.getElementById("caja1");
-            var vcaja3 = document.getElementById("caja3");
-            var vcaja4 = document.getElementById("caja4");
-            var vcaja5 = document.getElementById("caja5");
-
-            vcaja1.removeEventListener("dragover", (ev) => permitirSoltar(ev));
-            vcaja1.removeEventListener("drop", (ev) => soltar1(ev));
-
-            vcaja2.removeEventListener("dragover", (ev) => permitirSoltar(ev));
-            vcaja2.removeEventListener("drop", (ev) => soltar2(ev));
-        
-            vcaja3.removeEventListener("dragover", (ev) => permitirSoltar(ev));
-            vcaja3.removeEventListener("drop", (ev) => soltar3(ev));
-                
-            vcaja4.removeEventListener("dragover", (ev) => permitirSoltar(ev));
-            vcaja4.removeEventListener("drop", (ev) => soltar4(ev));
-                
-            vcaja5.removeEventListener("dragover", (ev) => permitirSoltar(ev));
-            vcaja5.removeEventListener("drop", (ev) => soltar5(ev));
-
-            for(var i=0; i<productos.length; i++){
-                productos[i].removeAttribute("draggable", "true")
-                productos[i].removeAttribute("id", "producto"+(i+1))                 //Bucle que escribe en el html
-                productos[i].removeEventListener("dragstart",(ev) => iniciarArrastre(ev))
-            }
-        }
+writeHTML();
