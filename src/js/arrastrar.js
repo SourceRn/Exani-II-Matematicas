@@ -12,12 +12,14 @@ let ids = ["", "", "", ""];
 let ordenCorrecto = ["parentesis", "potencias", "multDiv", "sumResta"];
 let puntosTotales = 4;
 let puntaje = 0;
+let boolean = false;
 
 function deshacer(){
     multDiv.removeAttribute("hidden");
     parentesis.removeAttribute("hidden");
     potencias.removeAttribute("hidden");
     sumResta.removeAttribute("hidden");
+    document.getElementById("btnDeshacer").setAttribute("hidden", "");
     cont = 0;
     puntaje = 0;
     writeHTML();
@@ -26,6 +28,8 @@ function deshacer(){
 function putImages(id){
     id.setAttribute("hidden", "");
     cont += 1;
+
+    document.getElementById("btnDeshacer").removeAttribute("hidden");
     
     if (id.getAttribute("id", "") == "multDiv"){
         helper = 0;
