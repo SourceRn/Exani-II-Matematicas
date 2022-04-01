@@ -69,6 +69,14 @@ FONT ---------- POR AHORA SE DESABILITARA ESTA OPCION DEL FONT ------
     background-color: blue;
     color: grey;
 }
+#retobtn{
+    background-color: blue;
+    color: white;
+}
+#retobtn:hover{
+    background-color: blue;
+    color: grey;
+}
 
 .temsSeparation:hover{
     background-color: black;
