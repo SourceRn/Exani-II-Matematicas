@@ -116,32 +116,30 @@
   </div>
   <div id="caja1" class="container">
     <h1>Orden de la Jerarquia de Operaciones</h1>
-    <p id="btnDeshacer" onclick="deshacer()" style="cursor: pointer" hidden>Deshacer</p>
-    <br>
+    <p id="btnDeshacer" onclick="deshacerChanges()" style="cursor: pointer" hidden>Deshacer</p>
     <div id="resultado"></div>
-    <br>
     <div class="row">
-      <div class="col-md-12" id="boxImgs">
-          <img src="src/images/index/multDivision.png" alt="numeroUno" width="10%" class="imgJerarquia" id="multDiv" onclick="putImages(this)">
-          <img src="src/images/index/parentesis.png" alt="numeroDos" width="10%" class="imgJerarquia" id="parentesis" onclick="putImages(this)">
-          <img src="src/images/index/potencias.png" alt="numeroTres" width="10%" class="imgJerarquia" id="potencias" onclick="putImages(this)">
-          <img src="src/images/index/sumaResta.png" alt="numeroCuatro" width="10%" class="imgJerarquia" id="sumResta" onclick="putImages(this)">
+      <div class="container" id="optionsContainer">
+        <div class="row">
+          <div class="col-md-12" id="titOpt">Da click en una imagen, esta aparecera en el recuadro numero 1, la siguiente en el numero 2 y asi sucesivamente</div>
         </div>
-      <div class="row">
-        <!--Salto de linea-->
-        <br><br><br><br><br>
+        <br><br>
+        <div class="row">
+          <div class="col-md-3" id="optImg0"></div>
+          <div class="col-md-3" id="optImg1"></div>
+          <div class="col-md-3" id="optImg2"></div>
+          <div class="col-md-3" id="optImg3"></div>
+        </div>
+        <br><br>
       </div>
-      <div class="row">
-        <div class="col-md-3 cajaImg" id="cajaImg1"></div>
-        <div class="col-md-3 cajaImg" id="cajaImg2"></div>
-        <div class="col-md-3 cajaImg" id="cajaImg3"></div>
-        <div class="col-md-3 cajaImg" id="cajaImg4"></div>
-      </div>
+
+      <div class="container" id="arrastarContainer"></div>
+      
       <div class="col-md-6">
         <br><br><br><br>
         <div class="opera container" id="">
               <p>
-                <center><a href="#" class="btn btn-primary btn-lg "  tabindex="-1" role="button" aria-disabled="true" onclick="return validacion()"><b>Revisar la Actividad</b></a></center>
+                <center><a href="#" class="btn btn-primary btn-lg "  tabindex="-1" role="button" aria-disabled="true" onclick="validacion()"><b>Revisar la Actividad</b></a></center>
                 <br>
                 <center><button hidden id="verificar" class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                   <h4>Verifica tus Respuestas</h4>
@@ -149,12 +147,15 @@
               </p>
               <div class="collapse" id="collapseExample">
                 <div class="card card-body">
-                    <b>Las Respuestas correctas son:</b>
-                 A). Parentesis ( ), [ ], { } <img src="src/images/index/1.png" width="5%" height="5%" alt="" class="producto">
-                 B).Sumas y Restas +, -  <img src="src/images/index/4.png" width="5%" height="5%" alt="" class="producto">
-                 C). Multiplicaciones y divisiones *, / <img src="src/images/index/3.png" width="5%" height="5%" alt="" class="producto">
-                 D).Potencias y raices ^ <img src="src/images/index/2.png" width="5%" height="5%" alt="" class="producto">
-
+                  <b>Las Respuestas correctas son:</b>
+                  <span id="titleSpace1" class="smallTitleSpace">1</span>
+                  A). Parentesis ( ), [ ], { }
+                  <span id="titleSpace2" class="smallTitleSpace">2</span>
+                  D).Potencias y raices ^
+                  <span id="titleSpace3" class="smallTitleSpace">3</span> 
+                  C). Multiplicaciones y divisiones *, /
+                  <span id="titleSpace4" class="smallTitleSpace">4</span>
+                  B).Sumas y Restas +, -
                 </div>
               </div>
         </div>
